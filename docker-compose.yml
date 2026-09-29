@@ -1,30 +1,20 @@
 services:
-  9router:
-    image: mhiqrambhrng/9router-mibp-version:latest
-    container_name: 9router
+  aegistrouter:
+    build: .
+    image: aegistrouter:latest
+    container_name: aegistrouter
     restart: always
     ports:
-      - "20128:20128"
+      - "20200:20200"
     volumes:
-      - 9router-data:/app/data
-    env_file:
-      - .env
+      - aegistrouter-data:/app/data
     environment:
       DATA_DIR: /app/data
-      PORT: "20128"
+      PORT: "20200"
       HOSTNAME: "0.0.0.0"
       NODE_ENV: production
-      HEADROOM_URL: http://headroom:8787
-    depends_on:
-      - headroom
-
-  headroom:
-    image: ghcr.io/chopratejas/headroom:latest
-    container_name: headroom
-    restart: always
-    ports:
-      - "8787:8787"
+      # INITIAL_PASSWORD: set via .env (INITIAL_PASSWORD=...) — never commit real passwords
 
 volumes:
-  9router-data:
-    name: 9router-data
+  aegistrouter-data:
+    name: aegistrouter-data

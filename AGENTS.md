@@ -129,6 +129,7 @@ re-verify after.
 | **Docker hardening** | `Dockerfile`: digest-pinned `NODE_IMAGE`, tracked `package-lock.json`, `npm ci`, `HEALTHCHECK`. `.github/workflows/docker-publish.yml`. |
 | **dompurify security override** | `package.json` `overrides.dompurify` + the direct `dompurify` dependency |
 | **MIBP branding** | `README.md`, `docker-compose.yml`, `.env.example`, the `MIBP Edition` link in `src/app/(dashboard)/dashboard/profile/page.js` |
+| **AegistRouter features** | `open-sse/rtk/loopGuard.js` (LoopGuard O(K) tool-loop injection, wired in `chatCore.js` after Ponytail), `open-sse/rtk/skeptical.js` (Skeptical Rules, injected by `ponytail.js`), branding `AegistRouter` in `package.json`/`src/app/layout.js`/`src/app/login/page.js`/`Sidebar.js`/`.env.example` |
 | **Cline free-tier models** | `open-sse/providers/registry/cline.js` `authModes: ["oauth","apikey"]` + `cline-free/*` models; `open-sse/shared/clineAuth.js` product headers |
 
 ---
