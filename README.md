@@ -46,8 +46,9 @@ See `AGENTS.md` §5/§6: fork-only features are registered there and must be res
 
 ## Credits
 
-- Base: [decolua/9router](https://github.com/decolua/9router)
-- Fork lineage: [mhiqrambg/9router-mibp-version](https://github.com/mhiqrambg/9router-mibp-version) (MIBP edition)
+- Base: [decolua/9router](https://github.com/decolua/9router) (upstream)
+- Fork lineage: [mhiqrambg/9router-mibp-version](https://github.com/mhiqrambg/9router-mibp-version) (MIBP edition — Docker hardening, proxy-pool fitness, Freebuff provider)
+- AegistRouter additions: LoopGuard, Skeptical Rules, branding ([T3Crypt/AegistRouter](https://github.com/T3Crypt/AegistRouter))
 
 ## License
 
