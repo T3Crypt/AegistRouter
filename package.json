@@ -1,6 +1,6 @@
 {
   "name": "aegistrouter",
-  "version": "1.0.0-aegist.1",
+  "version": "1.0.0-aegist.2",
   "description": "9Router web dashboard",
   "private": true,
   "scripts": {

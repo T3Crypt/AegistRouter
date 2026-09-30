@@ -102,29 +102,34 @@ import p97 from "./xiaomi-tokenplan.js";
 import p98 from "./youcom.js";
 import p99 from "./alims-intl.js";
 import p100 from "./codebuddy-intl.js";
-import p101 from "./trae.js";
-import p102 from "./zed.js";
-import p103 from "./api-airforce.js";
-import p104 from "./baidu.js";
-import p105 from "./bazaarlink.js";
-import p106 from "./bluesminds.js";
-import p107 from "./kilo-gateway.js";
-import p108 from "./llm7.js";
-import p109 from "./sambanova.js";
-import p110 from "./tencent.js";
-import p111 from "./morph.js";
-import p112 from "./devin-cli.js";
-import p113 from "./windsurf.js";
-import p114 from "./poolside.js";
-import p115 from "./tokenrouter.js";
-import p116 from "./selfhosted-stt.js";
-import p117 from "./selfhosted-tts.js";
-import p118 from "./selfhosted-embedding.js";
-import p119 from "./fish-audio.js";
-import p120 from "./alitp-intl.js";
-import p121 from "./xquik.js";
-import p122 from "./ollama-search.js";
-
+// Temporarily hidden — no tool calling support (trae SOLO agent / windsurf gRPC skip ToolCallChunk).
+// Re-enable by uncommenting both the import and the array entry below.
+// import p102 from "./trae.js";
+import p103 from "./zed.js";
+import p105 from "./api-airforce.js";
+import p106 from "./baidu.js";
+import p107 from "./bazaarlink.js";
+import p108 from "./bluesminds.js";
+import p109 from "./kilo-gateway.js";
+import p110 from "./llm7.js";
+import p111 from "./sambanova.js";
+import p112 from "./tencent.js";
+import p113 from "./morph.js";
+// import p114 from "./devin-cli.js";
+// import p104 from "./windsurf.js";
+import p115 from "./poolside.js";
+import p116 from "./tokenrouter.js";
+import p117 from "./selfhosted-stt.js";
+import p118 from "./selfhosted-tts.js";
+import p119 from "./selfhosted-embedding.js";
+import p120 from "./fish-audio.js";
+import p121 from "./alitp-intl.js";
+import p122 from "./xquik.js";
+import p125 from "./tokenharbor.js";
+import p126 from "./dahl.js";
+import p127 from "./atria.js";
+import p129 from "./agnes.js";
+import p130 from "./bai.js";
 export default [
   p0,
   p1,
@@ -229,10 +234,8 @@ export default [
   p98,
   p99,
   p100,
-  p101,
-  p102,
+  // p101 (ollama-search) — removed upstream; p102 (trae), p104 (windsurf), p114 (devin-cli) hidden — no tool-calling support
   p103,
-  p104,
   p105,
   p106,
   p107,
@@ -242,7 +245,6 @@ export default [
   p111,
   p112,
   p113,
-  p114,
   p115,
   p116,
   p117,
@@ -251,4 +253,9 @@ export default [
   p120,
   p121,
   p122,
+  p125,
+  p126,
+  p127,
+  p129,
+  p130,
 ];
