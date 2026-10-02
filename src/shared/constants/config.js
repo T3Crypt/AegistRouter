@@ -2,9 +2,15 @@ import pkg from "../../../package.json" with { type: "json" };
 
 // App configuration
 export const APP_CONFIG = {
-  name: "9Router Proxy",
-  description: "AI Infrastructure Management",
+  name: "AegistRouter",
+  description: "Self-hosted AI API router with LoopGuard, Skeptical Rules, and key-pool rotation",
   version: pkg.version,
+  upstream: {
+    // Lineage: AegistRouter → MIBP fork → 9router upstream. Version shown in About.
+    project: "9router",
+    repo: "https://github.com/decolua/9router",
+    version: "v0.5.95",
+  },
 };
 
 // GitHub configuration

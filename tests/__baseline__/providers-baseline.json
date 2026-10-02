@@ -203,11 +203,11 @@
     "baseUrl": "https://chatgpt.com/backend-api/codex/responses",
     "format": "openai-responses",
     "forceStream": true,
-    "cliVersion": "0.155.0",
+    "cliVersion": "0.159.0",
     "headers": {
       "originator": "codex_cli_rs",
-      "User-Agent": "codex_cli_rs/0.155.0",
-      "version": "0.155.0"
+      "User-Agent": "codex_cli_rs/0.159.0",
+      "version": "0.159.0"
     },
     "usage": {
       "url": "https://chatgpt.com/backend-api/wham/usage",
@@ -744,58 +744,10 @@
     "validateUrl": "https://ollama.com/api/tags",
     "format": "ollama"
   },
-  "qoder-cn": {
-    "baseUrl": "https://gateway.qoder.com.cn/algo/api/v2/service/pro/sse/agent_chat_generation",
-    "headers": {},
-    "timeoutMs": 120000,
-    "stallTimeoutMs": 120000,
-    "usage": {
-      "url": "https://openapi.qoder.com.cn/api/v2/quota/usage"
-    },
-    "format": "openai"
-  },
   "openai": {
     "baseUrl": "https://api.openai.com/v1/chat/completions",
     "forceStream": true,
     "format": "openai"
-  },
-  "opencode-go": {
-    "baseUrl": "https://opencode.ai/zen/go/v1/chat/completions",
-    "headers": {},
-    "usage": {
-      "url": "https://opencode.ai/zen/go/v1/usage"
-    },
-    "format": "openai",
-    "transports": [
-      {
-        "format": "openai",
-        "baseUrl": "https://opencode.ai/zen/go/v1/chat/completions",
-        "auth": {
-          "combined": true,
-          "header": "Authorization",
-          "scheme": "bearer"
-        }
-      },
-      {
-        "format": "claude",
-        "baseUrl": "https://opencode.ai/zen/go/v1/messages",
-        "auth": {
-          "combined": true,
-          "header": "x-api-key",
-          "scheme": "raw",
-          "anthropicVersion": true
-        }
-      },
-      {
-        "format": "openai-responses",
-        "baseUrl": "https://opencode.ai/zen/go/v1/responses",
-        "auth": {
-          "combined": true,
-          "header": "Authorization",
-          "scheme": "bearer"
-        }
-      }
-    ]
   },
   "opencode-zen": {
     "baseUrl": "https://opencode.ai/zen/v1/chat/completions",
@@ -827,6 +779,44 @@
       {
         "format": "openai-responses",
         "baseUrl": "https://opencode.ai/zen/v1/responses",
+        "auth": {
+          "combined": true,
+          "header": "Authorization",
+          "scheme": "bearer"
+        }
+      }
+    ]
+  },
+  "opencode-go": {
+    "baseUrl": "https://opencode.ai/zen/go/v1/chat/completions",
+    "headers": {},
+    "usage": {
+      "url": "https://opencode.ai/zen/go/v1/usage"
+    },
+    "format": "openai",
+    "transports": [
+      {
+        "format": "openai",
+        "baseUrl": "https://opencode.ai/zen/go/v1/chat/completions",
+        "auth": {
+          "combined": true,
+          "header": "Authorization",
+          "scheme": "bearer"
+        }
+      },
+      {
+        "format": "claude",
+        "baseUrl": "https://opencode.ai/zen/go/v1/messages",
+        "auth": {
+          "combined": true,
+          "header": "x-api-key",
+          "scheme": "raw",
+          "anthropicVersion": true
+        }
+      },
+      {
+        "format": "openai-responses",
+        "baseUrl": "https://opencode.ai/zen/go/v1/responses",
         "auth": {
           "combined": true,
           "header": "Authorization",
@@ -880,6 +870,16 @@
     "stallTimeoutMs": 120000,
     "usage": {
       "url": "https://openapi.qoder.sh/api/v2/quota/usage"
+    },
+    "format": "openai"
+  },
+  "qoder-cn": {
+    "baseUrl": "https://gateway.qoder.com.cn/algo/api/v2/service/pro/sse/agent_chat_generation",
+    "headers": {},
+    "timeoutMs": 120000,
+    "stallTimeoutMs": 120000,
+    "usage": {
+      "url": "https://openapi.qoder.com.cn/api/v2/quota/usage"
     },
     "format": "openai"
   },
@@ -1025,32 +1025,6 @@
     "format": "openai",
     "tokenUrl": "https://www.codebuddy.ai/v2/plugin/auth/token"
   },
-  "trae": {
-    "baseUrl": "https://core-normal.trae.ai/api/remote/v1",
-    "format": "openai",
-    "headers": {
-      "X-Trae-Client-Type": "web",
-      "X-Preferenced-Language": "en",
-      "Referer": "https://solo.trae.ai/"
-    },
-    "auth": {
-      "combined": true,
-      "header": "Authorization",
-      "scheme": "Cloud-IDE-JWT"
-    },
-    "usage": {
-      "url": "https://api.marscode.com/cloudide/api/v3/trae/GetUserInfo"
-    },
-    "regions": {
-      "cn": "https://api.marscode.com",
-      "sg": "https://api.trae.ai",
-      "us": "https://www.trae.ai"
-    },
-    "defaultRegion": "cn",
-    "clientId": "ono9krqynydwx5",
-    "clientSecret": "-",
-    "tokenUrl": "https://api.marscode.com/cloudide/api/v3/trae/oauth/ExchangeToken"
-  },
   "zed": {
     "baseUrl": "https://cloud.zed.dev/completions",
     "format": "openai",
@@ -1117,25 +1091,6 @@
     "baseUrl": "https://api.morphllm.com/v1/chat/completions",
     "validateUrl": "https://api.morphllm.com/v1/models",
     "format": "openai"
-  },
-  "devin-cli": {
-    "baseUrl": "devin://acp/stdio",
-    "format": "openai"
-  },
-  "windsurf": {
-    "baseUrl": "https://server.codeium.com/exa.language_server_pb.LanguageServerService/GetChatMessage",
-    "format": "openai",
-    "headers": {
-      "Content-Type": "application/grpc-web+proto",
-      "Accept": "application/grpc-web+proto",
-      "X-Grpc-Web": "1"
-    },
-    "auth": {
-      "combined": true,
-      "header": "Authorization",
-      "scheme": "Bearer"
-    },
-    "clientId": "3GUryQ7ldAeKEuD2obYnppsnmj58eP5u"
   },
   "poolside": {
     "baseUrl": "https://inference.poolside.ai/v1/chat/completions",

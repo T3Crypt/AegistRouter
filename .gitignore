@@ -101,3 +101,13 @@ graphify-out/*
 .start-dev.ps1
 start-dev-silent.cjs
 debug.log
+
+# local/private operational files — never commit
+sync_9router_to_10router.py
+removed-cline-models.json
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+.env
+*.log

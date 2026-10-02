@@ -43,7 +43,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-text-muted mb-6 max-w-sm font-light">
-              The unified interface for modern AI infrastructure. Secure, observable, and scalable.
+              Self-hosted AI API router with LoopGuard, Skeptical Rules, and key-pool rotation. Based on 9router.
             </p>
             {/* Social links */}
             <div className="flex gap-4">
@@ -114,7 +114,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-text-muted">
-            © {new Date().getFullYear()} {APP_CONFIG.name} Inc. All rights reserved.
+            © {new Date().getFullYear()} {APP_CONFIG.name}. Based on 9router — see README for credits.
           </p>
           <div className="flex gap-6 text-sm text-text-muted">
             <Link href="#" className="hover:text-primary transition-colors">
