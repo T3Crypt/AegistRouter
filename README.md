@@ -1,17 +1,20 @@
-<p align="center">
-  <h1 align="center">AegistRouter</h1>
-  <strong>Self-hosted AI API router with built-in reliability and anti-hallucination guardrails.</strong><br>
-  One OpenAI-style request → any provider. Streamed back in your client's format.<br>
-  <a href="README.md">🇬🇧 English</a> | <a href="README.id.md">🇮🇩 Bahasa Indonesia</a>
-</p>
+<div align="center">
+
+# AegistRouter
+
+**Self-hosted AI API router with built-in reliability and anti-hallucination guardrails.**
+
+One OpenAI-style request → any provider. Streamed back in your client's format.
+
+[🇬🇧 English](README.md) | [🇮🇩 Bahasa Indonesia](README.id.md)
+
+![version](https://img.shields.io/badge/version-1.0.0--aegist.3-blue)
+![base](https://img.shields.io/badge/base%3A%209router-v0.5.95-green)
+![license](https://img.shields.io/badge/license-MIT-lightgrey)
+
+</div>
 
 ---
-
-<p align="center">
-  <img alt="AegistRouter version" src="https://img.shields.io/badge/version-1.0.0--aegist.3-blue" />
-  <img alt="9router base version" src="https://img.shields.io/badge/base%3A%209router-v0.5.95-green" />
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey" />
-</p>
 
 AegistRouter is a hard fork of [9router](https://github.com/decolua/9router) built on the [MIBP edition](https://github.com/mhiqrambg/9router-mibp-version). It adds its own reliability layer on top: tool-loop detection, anti-hallucination prompt rules, and hardened deployment defaults.
 
