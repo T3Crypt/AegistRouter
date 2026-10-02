@@ -265,7 +265,7 @@ export default function OAuthModal({ isOpen, provider, providerInfo, onSuccess, 
           return;
         }
 
-        if (data.error === "expired_token" || data.error === "access_denied") {
+        if (data.error === "expired_token" || data.error === "access_denied" || data.fatal) {
           const fatal = new Error(data.errorDescription || data.error);
           fatal.__oauthFatal = true;
           throw fatal;
@@ -393,7 +393,22 @@ export default function OAuthModal({ isOpen, provider, providerInfo, onSuccess, 
       }
 
       // Device code flow providers (must match oauth providers with flowType: "device_code")
-      if (DEVICE_CODE_PROVIDERS.includes(provider)) {
+      const deviceCodeProviders = [
+        "github",
+        "kiro",
+        "kimi",
+        "kimi-coding",
+        "kilocode",
+        "codebuddy-cn",
+        "codebuddy-intl",
+        "qoder",
+        "qoder-cn",
+        "grok-cli",
+        "freebuff",
+        "muse",
+        "glm",
+      ];
+      if (deviceCodeProviders.includes(provider)) {
         setIsDeviceCode(true);
         setStep("waiting");
 
@@ -437,6 +452,8 @@ export default function OAuthModal({ isOpen, provider, providerInfo, onSuccess, 
             }
           : (provider === "kimi" || provider === "kimi-coding")
           ? { _kimiDeviceId: data._kimiDeviceId }
+          : provider === "glm"
+          ? { _zcodePollToken: data._zcodePollToken }
           : null;
         startPolling(
           data.device_code,
