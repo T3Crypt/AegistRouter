@@ -1,11 +1,14 @@
 <p align="center">
   <h1 align="center">AegistRouter</h1>
   <strong>Router API AI self-hosted dengan guardrail reliabilitas dan anti-halusinasi bawaan.</strong><br>
-  Satu request gaya OpenAI → provider apa pun. Respons streaming dalam format client Anda.
+  Satu request gaya OpenAI → provider apa pun. Respons streaming dalam format client Anda.<br>
+  <a href="README.md">🇬🇧 English</a> | <a href="README.id.md">🇮🇩 Bahasa Indonesia</a>
 </p>
 
 <p align="center">
-  <a href="README.md">🇬🇧 English</a> | <a href="README.id.md">🇮🇩 Bahasa Indonesia</a>
+  <img alt="AegistRouter version" src="https://img.shields.io/badge/version-1.0.0--aegist.3-blue" />
+  <img alt="9router base version" src="https://img.shields.io/badge/base%3A%209router-v0.5.95-green" />
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey" />
 </p>
 
 ---

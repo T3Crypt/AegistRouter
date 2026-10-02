@@ -8,7 +8,7 @@
 ---
 
 <p align="center">
-  <img alt="AegistRouter version" src="https://img.shields.io/badge/version-1.0.0--aegist.2-blue" />
+  <img alt="AegistRouter version" src="https://img.shields.io/badge/version-1.0.0--aegist.3-blue" />
   <img alt="9router base version" src="https://img.shields.io/badge/base%3A%209router-v0.5.95-green" />
   <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey" />
 </p>
