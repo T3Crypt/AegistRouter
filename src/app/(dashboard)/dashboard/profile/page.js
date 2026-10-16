@@ -1644,7 +1644,7 @@ export default function ProfilePage() {
 
         {/* App Info */}
         <div className="text-center text-xs sm:text-sm text-text-muted py-4">
-          <p>{APP_CONFIG.name} v{APP_CONFIG.version} <span className="opacity-60">(9router {APP_CONFIG.upstream?.version || "v0.5.99"})</span></p>
+          <p>9Router v{APP_CONFIG.upstream?.version || "v0.5.104"}</p>
           <p className="mt-1">{isRemoteHost ? "Remote Mode" : "Local Mode - All data stored on your machine"}</p>
           <a
             href="https://github.com/T3Crypt/AegistRouter"
