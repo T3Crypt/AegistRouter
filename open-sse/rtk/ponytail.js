@@ -3,7 +3,10 @@
 
 import { injectSystemPrompt } from "./systemInject.js";
 import { PONYTAIL_PROMPTS } from "./ponytailPrompt.js";
+import { SKEPTICAL_PROMPT } from "./skeptical.js";
 
 export function injectPonytail(body, format, level) {
   injectSystemPrompt(body, format, PONYTAIL_PROMPTS[level]);
+  // AegistRouter: Skeptical rules ride along with Ponytail (same toggle, zero extra settings).
+  injectSystemPrompt(body, format, SKEPTICAL_PROMPT);
 }

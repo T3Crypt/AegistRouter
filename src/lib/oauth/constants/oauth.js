@@ -127,6 +127,9 @@ export const KIMCHI_CONFIG = { ...PROVIDER_OAUTH["kimchi"] };
 // Endpoint: cli-chat-proxy.grok.com — same client_id as xai, different flow + scopes
 export const GROK_CLI_CONFIG = { ...PROVIDER_OAUTH["grok-cli"] };
 
+// Freebuff OAuth Configuration (Device Code Flow)
+export const FREEBUFF_CONFIG = { ...PROVIDER_OAUTH["freebuff"] };
+
 // Muse — subscription device code flow to auth.meta.com, no refresh
 // (Meta rejects refresh_token grants; the minted Model API key never expires).
 export const MUSE_CONFIG = { ...PROVIDER_OAUTH["muse"] };
@@ -224,17 +227,6 @@ export const ZED_HOSTED_CONFIG = {
   oauthTimeoutMs: 600_000,
 };
 
-// Nous Research Portal — OAuth 2.0 Device Code flow (RFC 8628) + agent key minting
-export const NOUS_CONFIG = {
-  clientId: "hermes-cli",
-  portalBaseUrl: "https://portal.nousresearch.com",
-  deviceCodeUrl: "https://portal.nousresearch.com/api/oauth/device/code",
-  tokenUrl: "https://portal.nousresearch.com/api/oauth/token",
-  agentKeyUrl: "https://portal.nousresearch.com/api/oauth/agent-key",
-  inferenceBaseUrl: "https://inference-api.nousresearch.com/v1",
-  scope: "inference:invoke inference:mint_agent_key",
-};
-
 // OAuth timeout (5 minutes)
 export const OAUTH_TIMEOUT = 300000;
 
@@ -265,5 +257,4 @@ export const PROVIDERS = {
   WINDSURF: "windsurf",
   GLM: "glm",
   ZED: "zed",
-  NOUS: "nous",
 };
