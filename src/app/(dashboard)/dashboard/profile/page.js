@@ -82,6 +82,7 @@ export default function ProfilePage() {
   const [proxyTestLoading, setProxyTestLoading] = useState(false);
 
   const [isRemoteHost, setIsRemoteHost] = useState(false);
+  const [versionInfo, setVersionInfo] = useState(null);
   useEffect(() => {
     if (typeof window !== "undefined")
       setIsRemoteHost(!["localhost", "127.0.0.1", "::1"].includes(window.location.hostname));
@@ -227,7 +228,15 @@ export default function ProfilePage() {
     }
   };
 
-  const handlePasswordChange = async (e) => {
+  // Dynamic upstream version check — hits /api/version (npm latest vs APP_CONFIG upstream)
+  useEffect(() => {
+    fetch("/api/version", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => setVersionInfo(data))
+      .catch(() => {});
+  }, []);
+
+  const handleMemoryCheck = async () => {
     e.preventDefault();
     if (passwords.new !== passwords.confirm) {
       setPassStatus({ type: "error", message: "Passwords do not match" });
@@ -1644,7 +1653,14 @@ export default function ProfilePage() {
 
         {/* App Info */}
         <div className="text-center text-xs sm:text-sm text-text-muted py-4">
-          <p>9Router v{APP_CONFIG.upstream?.version || "v0.5.104"}</p>
+          <p>
+            9Router v{versionInfo?.latestVersion || (APP_CONFIG.upstream?.version || "v0.5.104").replace(/^v/, "")}
+            {versionInfo?.hasUpdate && (
+              <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-medium text-amber-500">
+                ↑ update available
+              </span>
+            )}
+          </p>
           <p className="mt-1">{isRemoteHost ? "Remote Mode" : "Local Mode - All data stored on your machine"}</p>
           <a
             href="https://github.com/T3Crypt/AegistRouter"

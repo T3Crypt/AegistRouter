@@ -9,7 +9,10 @@ const versionCache = (global.__npmVersionCache ??= { value: null, fetchedAt: 0 }
 
 // AegistRouter fork version never matches npm's `9router` semver
 // (1.0.0-aegist.x vs 0.5.x), so compare against the UPSTREAM version instead.
-const UPSTREAM_VERSION = "0.5.104";
+// Upstream base version is read from APP_CONFIG (single source of truth —
+// update it there on each sync and this endpoint follows automatically).
+import { APP_CONFIG } from "@/shared/constants/config";
+const UPSTREAM_VERSION = String(APP_CONFIG.upstream?.version || "0.0.0").replace(/^v/, "");
 
 function semverKey(v) {
   // "0.5.104" → [0,5,104]; strips any -suffix
