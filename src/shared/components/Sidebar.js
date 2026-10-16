@@ -126,9 +126,9 @@ export default function Sidebar({ onClose }) {
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg font-semibold tracking-tight text-text-main">
-                {APP_CONFIG.name}
+                9Router
               </h1>
-              <span className="text-xs text-text-muted">v{APP_CONFIG.version}</span>
+              <span className="text-xs text-text-muted">v{(APP_CONFIG.upstream?.version || "v0.5.104").replace(/^v/, "")}</span>
             </div>
           </Link>
           {updateInfo && (
