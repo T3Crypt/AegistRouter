@@ -1653,14 +1653,7 @@ export default function ProfilePage() {
 
         {/* App Info */}
         <div className="text-center text-xs sm:text-sm text-text-muted py-4">
-          <p>
-            9Router v{versionInfo?.latestVersion || (APP_CONFIG.upstream?.version || "v0.5.104").replace(/^v/, "")}
-            {versionInfo?.hasUpdate && (
-              <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-medium text-amber-500">
-                ↑ update available
-              </span>
-            )}
-          </p>
+          <p>AegistRouter v{(APP_CONFIG.upstream?.version || "v0.5.104").replace(/^v/, "")}</p>
           <p className="mt-1">{isRemoteHost ? "Remote Mode" : "Local Mode - All data stored on your machine"}</p>
           <a
             href="https://github.com/T3Crypt/AegistRouter"
